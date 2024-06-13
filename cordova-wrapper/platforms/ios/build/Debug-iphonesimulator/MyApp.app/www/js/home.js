@@ -1,7 +1,7 @@
 import { db } from './firebaseConfig.js';
 import { getStorage, ref as storageRef, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-storage.js';
 import { collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js';
-
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js';
 document.addEventListener('DOMContentLoaded', () => {
   const storage = getStorage(); // Initialize Firebase Storage instance
 

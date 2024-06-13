@@ -1,6 +1,7 @@
 import { db } from './firebaseConfig.js';
 import { getStorage, ref as storageRef, getDownloadURL } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-storage.js';
 import { collection, getDocs } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js';
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js';
 
 function getQueryParams() {
   var queryParams = {};
@@ -19,7 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
   var params = getQueryParams();
   var searchValue = params.search;
   var filterValue = params.category;
+  const auth = getAuth();
   const storage = getStorage(); // Initialize Firebase Storage instance
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      console.log('User is logged in:', user);
+      console.log('User is logged in:', user.uid);
+    } else {
+      window.location.href = 'login.html';
+    }
+  });
   if (typeof filterValue !== 'undefined' && filterValue == 'Users') {
     getDocs(collection(db, 'users'))
       .then((querySnapshot) => {

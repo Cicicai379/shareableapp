@@ -20,6 +20,26 @@ const auth = getAuth(app);
 let userId;
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  // Add event listener to the logout link
+  const logoutLink = document.getElementById('logoutLink');
+  logoutLink.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default link behavior
+
+    // Sign out the user
+    auth.signOut()
+      .then(() => {
+        // Sign-out successful
+        console.log('User logged out successfully.');
+        window.location.href = 'login.html';
+      })
+      .catch((error) => {
+        // An error occurred during sign-out
+        console.error('Error signing out:', error);
+      });
+  });
+
+
   onAuthStateChanged(auth, (user) => {
     if (user) {
       console.log('User is logged in:', user);
@@ -42,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
   <div style="width: 80%;">
     <div style="height: 77px; position: relative;">
-      <div style="width: 80%; height: 50px; padding-bottom: 10px; position: absolute; left: 15%; transform: translateX(-50%);">
+      <div style="width: 80%; height: 50px; padding-bottom: 10px; position: absolute; left: 15%; transform: translateX(-35%);">
         <div style="width: 343px; height: 77px; left: 0; top: 20px; position: relative">
                 <div style="width: 400px; height: 50px; padding-bottom: 25px; left: 0px; top: ${Math.floor(i)}px; position: absolute;">
                   <div style="width: 50px; height: 50px; background-image: url('${url}'); background-size: cover; background-position: center center; border-radius: 8px;"></div>
