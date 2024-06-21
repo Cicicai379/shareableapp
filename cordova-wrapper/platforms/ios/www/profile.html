@@ -88,6 +88,38 @@
       color: white;
       border-radius: 4px;
     }
+    .nav-bar {
+      width: 100%;
+      height: 75px;
+      position: fixed;
+      bottom: 0;
+      background: #FAFAFA;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 0.5px solid #BDC5CD;
+    }
+
+    .nav-icons {
+      display: flex;
+      justify-content: space-around;
+      width: 375px;
+    }
+
+    .nav-bar img {
+      width: 32px;
+      height: 32px;
+    }
+    .container {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background: white;
+    }
+
+    .profile-container {
+      position: relative;
+    }
   </style>
 
   <script>
@@ -121,62 +153,51 @@
 <body class="ember-application" data-new-gr-c-s-check-loaded="14.1163.0" data-gr-ext-installed="">
 
 <!-- Main Body -->
-<div class = "container">
+<div class="container">
   <div style="width: 100%; height: 100%; position: relative; background: white">
-    <div style="width: 100vw; height: 245px; left: 0px; top: 0px; position: absolute; background: #62931B"></div>
-    <img id="profile-image" style="width: 158px; height: 158px; left: 108px; top: 128px; position: absolute; box-shadow: 0px 4px 20px rgba(100.94, 100.94, 100.94, 0.15); border-radius: 9999px; border: 4px white solid" src="images/user.png">
-    <div style="width: 375px; height: 44px; left: 0px; top: 0px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
-      <div style="width: 375px; height: 44px; position: relative; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: flex">
-      </div>
-    </div>
-  </div>
-  <div style="width: 343px; height: 36px; left: 20px; top: 33px; position: absolute">
-    <div style="left: 289px; top: 8px; position: absolute; text-align: right; color: white; font-size: 16px; font-family: Inter; font-weight: 500; word-wrap: break-word"><a href=" " id="logoutLink">Logout</a ></div>
-    <div style="left: 126px; top: 0px; position: absolute; text-align: center; color: white; font-size: 30px; font-family: Inter; font-weight: 600; word-wrap: break-word">Profile</div>
-
-  </div>
-  <div style="left: 0; top: 0; right: 0; bottom: 0; position: absolute; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-    <div id="name" style="text-align: center; color: #235507; font-size: 30px; font-family: Inter; font-weight: 600; white-space: nowrap;"></div>
-    <div id="email" style="margin-top: 10px; text-align: center; color: #235507; font-size: 16px; font-family: Inter; font-weight: 700; white-space: nowrap;"></div>
-    <div class="segmented-control" style="margin-top: 10px;">
-      <button class="segmented-control__button active" data-target="listing">Listing</button>
-      <button class="segmented-control__button" data-target="reviews">Reviews</button>
-    </div>
-    <div style="width: 343px; height: 77px; left: 0; top: 20px; position: relative">
-      <div class="content" id="listing-content" style="display: block;">
-
-      </div>
-
-      <div class="content" id="reviews-content" style="display: none;">
-        <!-- Content for the "Reviews" segment -->
-        <div style="width: 343px; height: 77px; left: 0; top: 20px; position: relative">
-          <div style="width: 100%; height: 100%; text-align: center; color: black; font-size: 19px; font-family: Lato; font-weight: 700; line-height: 30px; word-wrap: break-word">Seller’s average rating</div>
-          <div style="width: 182px; height: 29px; left: 80px; top: 0px; position: relative">
-            <div style="width: 31.11px; height: 28px; left: 150.89px; top: 0px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
-              <img style="width: 31.11px; height: 28px" src="images/emptyleaf.png" />
-            </div>
-            <img style="width: 31.11px; height: 28px; left: 0px; top: 1px; position: absolute" src="images/leaf.png" />
-            <img style="width: 31.11px; height: 28px; left: 76.22px; top: 1px; position: absolute" src="images/leaf.png" />
-            <div style="width: 31.11px; height: 28px; left: 113.56px; top: 0px; position: absolute; justify-content: center; align-items: center; display: inline-flex">
-              <img style="width: 31.11px; height: 28px" src="images/emptyleaf.png" />
-            </div>
-            <img style="width: 31.11px; height: 28px; left: 38.89px; top: 1px; position: absolute" src="images/leaf.png" />
+    <div style="width: 100vw; height: 245px; left: 0px; top: -20px; position: absolute; background: #62931B"></div>
+    <div style="left: 0; top: -20; right: 0;height:420; bottom: 0; position: absolute; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+      <div class="profile-container" style="position: relative;">
+        <div class="user-info" style="position: absolute; top:20; left: 50%; transform: translateX(-50%);">
+          <img id="profile-image" style="width: 158px; height: 158px; box-shadow: 0px 4px 20px rgba(100.94, 100.94, 100.94, 0.15); border-radius: 9999px;" src="images/user.png">
+          <div id="name" style="margin-top: 10px;text-align: center; color: #235507; font-size: 30px; font-family: Inter; font-weight: 600; white-space: nowrap;"></div>
+          <div id="email" style="margin-top: 10px; text-align: center; color: #235507; font-size: 16px; font-family: Inter; font-weight: 700; white-space: nowrap;"></div>
+          <div id="rating" style="margin-top: 10px; text-align: center; color: #235507; font-size: 12px; font-family: Inter; font-weight: 500; white-space: nowrap;"></div>
+          <div id="rating-count" style="margin-top: 10px; text-align: center; color: #235507; font-size: 12px; font-family: Inter; font-weight: 500; white-space: nowrap;"></div>
+        </div>
+        <div style="width: 100%;display: flex;justify-content: center;align-items: center;position: relative;flex-direction: column;top: 320;">
+          <div class="segmented-control" style="margin-top: 10px;">
+            <button class="segmented-control__button active" data-target="listing">Donations</button>
+            <button class="segmented-control__button" data-target="reservations">Reservations</button>
           </div>
-
+          <div style="width: 343px; height: 77px; position: relative; margin-top: 20px;">
+            <div class="content" id="listing-content" style="display: block;"></div>
+            <div class="content" id="reservations-content" style="display: none;"></div>
+          </div>
         </div>
       </div>
     </div>
-
+  </div>
+  <div style="width: 100%; height: 450px; overflow-x: hidden; overflow-y: auto; margin-left: auto; margin-right: auto; justify-content: center; align-items: center; display: inline-flex">
+    <div style="width: 100%; height: 36px; top: 33px; position: absolute; justify-content: center; align-items: center;  display: inline-flex">
+      <div style="text-align: center; color: white; font-size: 30px; font-family: Inter; font-weight: 600; word-wrap: break-word">Profile</div>
+    </div>
+    <a href="" id="logoutLink" style="text-decoration: none; color: inherit;">
+      <div style="right: 20px; top: 40px; position: absolute; color: white; font-size: 16px; font-family: Inter; font-weight: 500; word-wrap: break-word">Logout</div>
+    </a>
   </div>
 
+</div>
   <!-- navigation bar -->
-  <div style="width: 100%; height: 83px; position: fixed; bottom: 0; background: #FAFAFA; justify-content: center; display: flex; align-items: flex-end;">
-    <div style="width: 375px; height: 0.50px; left: 0px; top: 0.50px; position: absolute; background: #BDC5CD"></div>
-    <a href="home.html"><img style="width: 34px; height: 32px; left: 50px; bottom: 15px; position: absolute" src="images/navicons/homeicon.png"></a>
-    <a href="profile.html"><img style="width: 32px; height: 32px; left: 216px; bottom: 15px; position: absolute" src="images/navicons/profileiconact.png"></a>
-    <a href="upload.html"><img style="width: 32px; height: 32px; left: 134px; bottom: 15px; position: absolute" src="images/navicons/uploadicon.png"></a>
-    <a href="setting.html"> <img style="width: 30.69px; height: 32px; left: 294px; bottom: 15px; position: absolute" src="images/navicons/settingicon.png"></a>
+  <div class="nav-bar">
+    <div class="nav-icons">
+      <a href="home.html"><img src="images/navicons/homeicon.png" alt="Home" /></a>
+      <a href="upload.html"><img src="images/navicons/uploadicon.png" alt="Upload" /></a>
+      <a href="profile.html"><img src="images/navicons/profileiconact.png" alt="Profile" /></a>
+      <a href="setting.html"><img src="images/navicons/settingicon.png" alt="Settings" /></a>
+    </div>
   </div>
+
 
 
 

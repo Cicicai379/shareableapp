@@ -20,31 +20,27 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 document.addEventListener('DOMContentLoaded', function () {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      const sendEmailButton = document.getElementById('reset'); // Ensure this ID matches your HTML button ID
-      sendEmailButton.addEventListener('click', function () {
-        console.log(user.email);
-        const email = document.getElementById('email').value;
-        if (user !== null && user.email !== email) {
-          alert('Incorrect email!');
-          return;
-        }
-        if (email) {
-          sendPasswordResetEmail(auth, email)
-            .then(() => {
-              alert('Password reset email sent!');
-            })
-            .catch((error) => {
-              console.error('Error sending password reset email:', error);
-              alert(`Failed to send password reset email: ${error.message}`);
-            });
-        } else {
-          alert('Please enter your email address.');
-        }
-      });
-    } else {
-      window.location.href = 'login.html';
+
+  const sendEmailButton = document.getElementById('reset'); // Ensure this ID matches your HTML button ID
+  sendEmailButton.addEventListener('click', function() {
+    console.log(user.email);
+    const email = document.getElementById('email').value;
+    if (user !== null && user.email !== email) {
+      alert('Incorrect email!');
+      return;
     }
+    if (email) {
+      sendPasswordResetEmail(auth, email)
+        .then(() => {
+          alert('Password reset email sent!');
+        })
+        .catch((error) => {
+          console.error('Error sending password reset email:', error);
+          alert(`Failed to send password reset email: ${error.message}`);
+        });
+    } else {
+      alert('Please enter your email address.');
+    }
+
   });
 });

@@ -51,18 +51,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 profileImageElement.src = url;
               })
               .catch((error) => {
-                // Handle any errors that occurred while retrieving the image URL
-                console.error('Error retrieving profile image URL:', error);
+                profileImageElement.src = "images/user.png";
+                // console.error('Error retrieving profile image URL:', error);
               });
           } else {
-            // Handle the case when the user document does not exist
           }
         })
         .catch((error) => {
-          // Handle any errors that occurred during the fetch
           console.error('Error fetching user data:', error);
         });
-
       document.getElementById('edit').addEventListener('click', function (event) {
         event.preventDefault();
         var email = document.getElementById('email').value;

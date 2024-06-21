@@ -20,46 +20,39 @@ const auth = getAuth(app);
 document.addEventListener('DOMContentLoaded', () => {
   const storage = getStorage(); // Initialize Firebase Storage instance
   onAuthStateChanged(auth, (user) => {
-    if (user) {
-      const userId = user.uid;
-      getDocs(collection(db, 'users'))
-        .then((querySnapshot) => {
-          const itemList = document.getElementById('username'); // Get the container element
-          const profilePic = document.getElementById('profile_image'); // Get the container element
-          const email = document.getElementById('email');
-          querySnapshot.forEach((doc) => {
-            const data = doc.data();
-            if (data.userId === userId) {
-              console.log(data.email);
-              const imageRef = storageRef(
-                storage,
-                `profile/${data.userId}.png`,
-              ); // Construct the reference to the image file
-              getDownloadURL(imageRef) // Fetch the URL for the image
-                .then((url) => {
-                  const image = document.createElement('div'); // Create a new div element
-                  image.innerHTML = `
-                  <img style="background-image: url('${url}'); width: 49px; height: 49px; left: 50px; top: 135px; position: absolute; box-shadow: 0px 4px 20px rgba(100.94, 100.94, 100.94, 0.35); border-radius: 9999px; border: 4px white solid" src="${url}">
-                `;
-                  profilePic.appendChild(image); // Append the div to the container element
-                })
-                .catch((error) => {
-                });
-              const div = document.createElement('div');
-              div.innerHTML = `<div>${data.username}</div>`;
-              itemList.appendChild(div);
-              const mail = document.createElement('div');
-              mail.textContent = data.email;
-              email.appendChild(mail);
-            }
-          });
-        })
-        .catch((error) => {
-          console.error('Error getting documents: ', error);
+    console.log(user);
+    // if (user) {
+    const userId = user.uid;
+    getDocs(collection(db, 'users'))
+      .then((querySnapshot) => {
+        const itemList = document.getElementById('username'); // Get the container element
+        const email = document.getElementById('email');
+        const image = document.getElementById('image');
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          if (data.userId === userId) {
+            console.log(data.email);
+            const imageRef = storageRef(
+              storage,
+              `profile/${data.userId}.png`,
+            ); // Construct the reference to the image file
+            getDownloadURL(imageRef) // Fetch the URL for the image
+              .then((url) => {
+                image.src = url;
+              })
+              .catch((error) => {
+              });
+            const div = document.createElement('div');
+            div.innerHTML = `<div>${data.username}</div>`;
+            itemList.appendChild(div);
+            const mail = document.createElement('div');
+            mail.textContent = data.email;
+            email.appendChild(mail);
+          }
         });
-    }
-    else {
-      window.location.href = 'login.html';
-    }
+      })
+      .catch((error) => {
+        console.error('Error getting documents: ', error);
+      });
   });
 });

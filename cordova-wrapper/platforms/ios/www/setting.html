@@ -78,7 +78,28 @@
       color: white;
       border-radius: 4px;
     }
+    .nav-bar {
+      width: 100%;
+      height: 75px;
+      position: fixed;
+      bottom: 0;
+      background: #FAFAFA;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-top: 0.5px solid #BDC5CD;
+    }
 
+    .nav-icons {
+      display: flex;
+      justify-content: space-around;
+      width: 375px;
+    }
+
+    .nav-bar img {
+      width: 32px;
+      height: 32px;
+    }
     html,
     body {
       margin: 0;
@@ -89,60 +110,64 @@
 
 
 <body class="ember-application" data-new-gr-c-s-check-loaded="14.1173.0" data-gr-ext-installed="">
+<!-- Main Body -->
+
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
-  <!-- Main Body -->
   <div style="width: 100%; height: 100%; background: white">
     <div style="width: 100%; height: 1120px;  position: absolute">
-      <div style="width: 100%; height: 335px;top: 0px;background: #94BF1A;border-top-left-radius: 12px;border-top-right-radius: 12px"></div>
+      <div style="width: 100%; height: 335px;top: 0px;background: #94BF1A;"></div>
       <div style="display: flex; justify-content: center; align-items: center;">
-      <div style="width: 90%; height: 936px; top: 118px; position: absolute; background: white; box-shadow: 0px 2px 16px rgba(75.44, 75.44, 75.44, 0.15); border-radius: 16px"></div>
+        <div style="width: 90%; height: 936px; top: 118px; position: absolute; background: white; box-shadow: 0px 2px 16px rgba(75.44, 75.44, 75.44, 0.15); border-radius: 16px"></div>
 
         <div style="width: 100%; height: 845px; top: 275px; position: absolute; background: white; border-radius: 16px"></div>
-      <div id="profile_image"><div>
-        <img style="width: 49px; height: 49px; left: 50px; top: 135px; position: absolute; box-shadow: 0px 4px 20px rgba(100.94, 100.94, 100.94, 0.35); border-radius: 9999px; border: 4px white solid" src="images/user.png">
-      </div></div>
-      <div style=" top: 151px; position: absolute; text-align: right; color: black; font-size: 16px; font-family: Inter; font-weight: 500; word-wrap: break-word" id="username"></div>
-      <div style=" top: 170px; position: absolute; text-align: right; color: black; font-size: 16px; font-family: Inter; font-weight: 500; word-wrap: break-word" id="email"></div>
-      <div style="width: 343px; height: 0px;  top: 198px; position: absolute; border: 0.50px #CACACA solid"></div>
-      <div style="width: 343px;height: 0px;top: 385px;position: absolute;border: 0.50px #CACACA solid"></div>
-      <div style="width: 329px; height: 310px; top: 220px; position: absolute">
+
+        <div id="profile_image">
+          <img id = "image" style="margin-bottom:5px; width: 49px; height: 49px; left: -120px; top: -200px; position: relative; box-shadow: 0px 2px 2px rgba(100.94, 100.94, 100.94,  100.94); border-radius: 9999px; border: 4px white solid" src="images/user.png">
+          <div id="username" style="width: 100%; top: -248px; left: -50px; position: relative; text-align: left; color: black; font-size: 16px; font-family: Inter; font-weight: 600; word-wrap: break-word"></div>
+          <div id="email" style="width: 100%; top: -244px; left: -50px; position: relative; text-align: left; color: grey; font-size: 14px; font-family: Inter; font-weight: 500; word-wrap: break-word"></div>
+
+        </div>
+
+
+        <div style="width: 80%; height: 0px;  top: 208px; position: absolute; border: 0.50px #CACACA solid"></div>
+      <div style="width: 80%;height: 0px;top: 395px;position: absolute;border: 0.50px #CACACA solid"></div>
+      <div style="width: 310px; height: 310px; top: 230px; position: absolute">
         <div style="top: 0px; position: absolute; color: #ADADAD; font-size: 18px; font-family: Inter; font-weight: 400; word-wrap: break-word">Account Settings</div>
-        <div style="width: 329px; height: 24px;top: 52px; position: absolute">
-          <a href="editProfile.html" style=" left: 0; top: 1px; color: black; font-size: 18px; font-family: Inter; font-weight: 400; word-wrap: break-word; width: 90px;">Edit profile</a>
-          <div style="width: 24px; height: 24px; left: 305px; top: 0px; position: absolute">
+        <a href="editProfile.html" style="width: 329px; height: 24px;top: 52px; position: absolute">
+          <div style=" left: 0; top: 1px; color: black; font-size: 18px; font-family: Inter; font-weight: 500; word-wrap: break-word; width: 120px;">Edit profile</div>
+          <div style="width: 24px; height: 24px; left: 303px; top: 0px; position: absolute">
             <img src="images/arrow.png" style="width: 7.41px; height: 12px; left: 8.59px; top: 6px; position: absolute;">
           </div>
-        </div>
-        <div style="width: 329px; height: 24px; left: 0px; top: 108px; position: absolute">
-          <a href="changePassword.html" style="left: 0px; top: 0px; position: absolute; color: black; font-size: 18px; font-family: Inter; font-weight: 400; word-wrap: break-word">Change password</a>
-          <div style="width: 24px; height: 24px; left: 305px; top: 0px; position: absolute">
+        </a>
+        <a href="changePassword.html" style="width: 339px; height: 24px; left: 0px; top: 108px; position: absolute">
+          <div style="left: 0px; top: 0px; position: absolute; color: black; font-size: 18px; font-family: Inter; font-weight: 500; word-wrap: break-word">Change password</div>
+          <div style="width: 24px; height: 24px; left: 303px; top: 0px; position: absolute">
             <img src="images/arrow.png" style="width: 7.41px; height: 12px; left: 8.59px; top: 6px; position: absolute;">
           </div>
-        </div>
+        </a>
       </div>
-      <div style="width: 329px;height: 189px;top: 410px;position: absolute">
+      <div style="width: 310px;height: 189px;top: 410px;position: absolute">
         <div style="left: 0px; top: 0px; position: absolute; color: #ADADAD; font-size: 18px; font-family: Inter; font-weight: 400; word-wrap: break-word">More</div>
-        <div style="width: 329px; height: 24px; left: 0px; top: 53px; position: absolute">
-          <div style="left: 0px; top: 1px; position: absolute; color: black; font-size: 18px; font-family: Inter; font-weight: 400; word-wrap: break-word">
-            <a href="aboutUs.html" style="color: black; text-decoration: none;">About us</a>
-          </div>
-          <div style="width: 24px; height: 24px; left: 305px; top: 0px; position: absolute">
+        <a href="aboutUs.html"  style="width: 329px; height: 24px; left: 0px; top: 53px; position: absolute">
+          <div style="left: 0px; top: 1px; position: absolute; color: black; font-size: 18px; font-family: Inter; font-weight: 500; word-wrap: break-word">About us</div>
+          <div style="width: 24px; height: 24px; left: 303px; top: 0px; position: absolute">
             <img src="images/arrow.png" style="width: 7.41px; height: 12px; left: 8.59px; top: 6px; position: absolute;">
           </div>
-        </div>
-        <div style="width: 329px; height: 24px; left: 0px; top: 109px; position: absolute">
-          <div style="left: 0px; top: 0px; position: absolute; color: black; font-size: 18px; font-family: Inter; font-weight: 400; word-wrap: break-word">
-            <a href="privacyPolicy.html" style="color: black; text-decoration: none;">Privacy policy</a>
-          </div>        <div style="width: 24px; height: 24px; left: 305px; top: 0px; position: absolute">
+        </a>
+        <a href="privacyPolicy.html" style="width: 329px; height: 24px; left: 0px; top: 109px; position: absolute">
+          <div style="left: 0px; top: 0px; position: absolute; color: black; font-size: 18px; font-family: Inter; font-weight: 500; word-wrap: break-word">
+            <div  style="color: black; text-decoration: none;">Privacy policy</div>
+          </div>
+          <div style="width: 24px; height: 24px; left: 303px; top: 0px; position: absolute">
           <img src="images/arrow.png" style="width: 7.41px; height: 12px; left: 8.59px; top: 6px; position: absolute;">
         </div>
-        </div>
-        <div style="width: 329px; height: 24px; left: 0px; top: 165px; position: absolute">
-          <a href="termsConditions.html" style="left: 0px; top: 0px; position: absolute; color: black; font-size: 18px; font-family: Inter; font-weight: 400; word-wrap: break-word">Terms and Conditions</a>
-          <div style="width: 24px; height: 24px; left: 305px; top: 0px; position: absolute">
+        </a>
+        <a href="termsConditions.html" style="width: 329px; height: 24px; left: 0px; top: 165px; position: absolute">
+          <div  style="left: 0px; top: 0px; position: absolute; color: black; font-size: 18px; font-family: Inter; font-weight: 500; word-wrap: break-word">Terms and Conditions</div>
+          <div style="width: 24px; height: 24px; left: 303px; top: 0px; position: absolute">
             <img src="images/arrow.png" style="width: 7.41px; height: 12px; left: 8.59px; top: 6px; position: absolute;">
           </div>
-        </div>
+        </a>
       </div>
       </div>
     </div>
@@ -150,12 +175,13 @@
 </div>
 
 <!-- navigation bar -->
-<div style="width: 100%; height: 83px; position: fixed; bottom: 0; background: #FAFAFA; ">
-  <a href="home.html"><img style="width: 34px; height: 32px; left: 50px; top: 15px; position: absolute" src="images/navicons/homeicon.png"></a>
-  <div style="width: 375px; height: 0.50px; left: 0px; top: 0.50px; position: absolute; background: #BDC5CD"></div>
-  <a href="profile.html"><img style="width: 32px; height: 32px; left: 216px; top: 15px; position: absolute" src="images/navicons/profileicon.png"></a>
-  <a href="upload.html"><img style="width: 32px; height: 32px; left: 134px; top: 15px; position: absolute" src="images/navicons/uploadicon.png"></a>
-  <a href="setting.html"> <img style="width: 30.69px; height: 32px; left: 294px; top: 15px; position: absolute" src="images/navicons/settingiconact.png"></a>
+<div class="nav-bar">
+  <div class="nav-icons">
+    <a href="home.html"><img src="images/navicons/homeicon.png" alt="Home" /></a>
+    <a href="upload.html"><img src="images/navicons/uploadicon.png" alt="Upload" /></a>
+    <a href="profile.html"><img src="images/navicons/profileicon.png" alt="Profile" /></a>
+    <a href="setting.html"><img src="images/navicons/settingiconact.png" alt="Settings" /></a>
+  </div>
 </div>
 
 <div></div><div id="Chat-Plugin-Root" class="compose-root-component"></div>

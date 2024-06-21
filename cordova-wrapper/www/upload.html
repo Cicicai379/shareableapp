@@ -60,7 +60,31 @@
       padding: 12px 16px;
       text-decoration: none;
       display: block;
+      font-family: Inter;
+      font-weight: 500;
+    } .nav-bar {
+        width: 100%;
+        height: 75px;
+        position: fixed;
+        bottom: 0;
+        background: #FAFAFA;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-top: 0.5px solid #BDC5CD;
+      }
+
+    .nav-icons {
+      display: flex;
+      justify-content: space-around;
+      width: 375px;
     }
+
+    .nav-bar img {
+      width: 32px;
+      height: 32px;
+    }
+
 
     .dropdown a:hover {background-color: #ddd;}
 
@@ -76,36 +100,37 @@
   </div>
 
   <!-- Submit button -->
-  <button id="submit_button" style="width: 343px; height: 50px; top: 680px; position: absolute; background: #62931B; border-radius: 100px; align-items: center">
+  <button id="submit_button" style="border:0; width: 343px; height: 50px; top: 680px; position: absolute; background: #62931B; border-radius: 100px; align-items: center">
     <div class="submit_text" style="text-align: center; color: white; font-size: 16px; font-family: Inter; font-weight: 700; word-wrap: break-word">Submit</div>
   </button>
 
   <!-- Item name and quantity input text fields -->
-  <div class="InputSearch" style="width: 343px; height: 50px; top: 473px; position: absolute">
-    <input type="text" id="item_name" placeholder="Item Name..." style="width: 343px; height: 50px; left: 0px; top: 0px; position: absolute; background: #F6F6F6; font-size: 16px; font-family: Inter; font-weight: 500; border-radius: 100px; border: 1px #E8E8E8 solid">
+<!--  <div class="InputSearch" style="width: 343px; height: 50px; top: 473px; position: absolute">-->
+<!--    <input type="text" id="item_name" placeholder="Item Name..." style="width: 343px; height: 50px; left: 0px; top: 0px; position: absolute; background: #F6F6F6; font-size: 16px; font-family: Inter; font-weight: 500; border-radius: 100px; border: 1px #E8E8E8 solid">-->
+<!--  </div>-->
+
+  <div style="width: 343px; height: 50px; top: 473px; position: absolute">
+    <div class="InputSearch" style="width: 343px; height: 50px; top: 0px; position: absolute; background: #F6F6F6; border-radius: 8px; border: 1px #E8E8E8 solid"></div>
+    <input placeholder="Item Name..." id="item_name" type="text" style="left: 16px; top: 16px; position: absolute; color: #000000; font-size: 16px; font-family: Inter; font-weight: 500; word-wrap: break-word; border: none; background: transparent; outline: none; padding: 0;">
   </div>
 
-  <div class="InputSearch" style="width: 343px; height: 50px; top: 543px; position: absolute">
-    <input type="text" id="quantity" placeholder="Quantity..." style="width: 343px; height: 50px; left: 0px; top: 0px; position: absolute; background: #F6F6F6; font-size: 16px; font-family: Inter; font-weight: 500; border-radius: 100px; border: 1px #E8E8E8 solid">
+<!--  <div class="InputSearch" style="width: 343px; height: 50px; top: 543px; position: absolute">-->
+<!--    <input type="text" id="quantity" placeholder="Quantity..." style="width: 343px; height: 50px; left: 0px; top: 0px; position: absolute; background: #F6F6F6; font-size: 16px; font-family: Inter; font-weight: 500; border-radius: 100px; border: 1px #E8E8E8 solid">-->
+<!--  </div>-->
+  <div style="width: 343px; height: 50px; top: 543px; position: absolute">
+    <div class="InputSearch" style="width: 343px; height: 50px; top: 0px; position: absolute; background: #F6F6F6; border-radius: 8px; border: 1px #E8E8E8 solid"></div>
+    <input placeholder="Quantity..." id="quantity" type="text" style="left: 16px; top: 16px; position: absolute; color: #000000; font-size: 16px; font-family: Inter; font-weight: 500; word-wrap: break-word; border: none; background: transparent; outline: none; padding: 0;">
   </div>
 
   <!-- Photo Upload -->
   <div class="UploadPhotoBox" style="width: 341px; height: 341px; top: 112px; position: absolute">
-    <img id="item-picture" src="images/upload-photo-placeholder.jpg" style="width: 341px; height: 341px; left: 0px; top: 0px; position: absolute; ">
+    <img id="item-picture" src="images/upload-photo-placeholder.jpeg" style="width: 341px; height: 341px; left: 0px; top: 0px; position: absolute; ">
     <!-- INPUT FILE FROM PHOTO ALBUM -->
     <label for="fileInp" style="width: 341px; height: 341px; left: 0px; top: 0px; position: absolute; display: flex; align-items: center; justify-content: center; text-align: center; color: black; font-size: 24px; font-family: Inter; font-weight: 500; word-wrap: break-word"></label>
     <!-- ONLY accepts png, jpeg and jpg images -->
     <input type="file" id="fileInp" accept="image/png, image/jpeg, image/jpg"  onchange="loadFile(event)" style="display: none"/>
   </div>
 
-  <!-- navigation bar -->
-  <div style="width: 100%; height: 83px; position: fixed; bottom: 0; background: #FAFAFA; justify-content: center;">
-    <div style="width: 375px; height: 0.50px; left: 0px; top: 0.50px; position: absolute; background: #BDC5CD"></div>
-    <a href="home.html"><img style="width: 34px; height: 32px; left: 50px; top: 15px; position: absolute" src="images/navicons/homeicon.png"></a>
-    <a href="profile.html"><img style="width: 32px; height: 32px; left: 216px; top: 15px; position: absolute" src="images/navicons/profileicon.png"></a>
-    <a href="upload.html"><img style="width: 32px; height: 32px; left: 134px; top: 15px; position: absolute" src="images/navicons/uploadiconact.png"></a>
-    <a href="setting.html"> <img style="width: 30.69px; height: 32px; left: 294px; top: 15px; position: absolute" src="images/navicons/settingicon.png"></a>
-  </div>
 
   <!-- Select listing Category dropdown menu -->
   <div class="dropdown" style="width: 343px; height: 50px; top: 613px; position: absolute">
@@ -120,6 +145,17 @@
       <a onclick="selectedCategory('Others')">Others</a>
     </div>
   </div>
+
+  <!-- navigation bar -->
+  <div class="nav-bar">
+    <div class="nav-icons">
+      <a href="home.html"><img src="images/navicons/homeicon.png" alt="Home" /></a>
+      <a href="upload.html"><img src="images/navicons/uploadiconact.png" alt="Upload" /></a>
+      <a href="profile.html"><img src="images/navicons/profileicon.png" alt="Profile" /></a>
+      <a href="setting.html"><img src="images/navicons/settingicon.png" alt="Settings" /></a>
+    </div>
+  </div>
+
 
   <script>
     // load photo function

@@ -12,15 +12,15 @@ document.getElementById('search').addEventListener('keydown', function (e) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const categories = document.querySelectorAll('.category');
-  const auth = getAuth();
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      console.log('User is logged in:', user);
-      console.log('User is logged in:', user.uid);
-    } else {
-      window.location.href = 'login.html';
-    }
-  });
+  // const auth = getAuth();
+  // onAuthStateChanged(auth, (user) => {
+  //   if (user) {
+  //     console.log('User is logged in:', user);
+  //     console.log('User is logged in:', user.uid);
+  //   } else {
+  //     window.location.href = 'login.html';
+  //   }
+  // });
   categories.forEach((category) => {
     category.addEventListener('click', function () {
       const categoryName = this.getAttribute('data-category');

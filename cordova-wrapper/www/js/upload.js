@@ -66,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('No images uploaded');
       }
 
+
+
       // just some debugging, check the Console in Inspect
       console.log(formattedDate);
       console.log(item_name);
@@ -102,17 +104,17 @@ async function submitItem(item_name, item_quantity, item_category, time_uploaded
     name: item_name,
     quantity: item_quantity,
     time: time_uploaded,
-    ownerUID: userID,
-    ownerUsername: username,
+    userId: userID,
+    username: username,
   });
   // Get the new document Id
   const documentId = docRef.id;
-  await updateDoc(docRef, { itemId: documentId });
+  await updateDoc(docRef, { id: documentId });
   console.log('Document written with ID: ', documentId);
 
   if (itemImageInput.files.length > 0) {
     const imageFile = itemImageInput.files[0];
-    const storageRef = ref(storage, `listings/${documentId}.png`); // Firebase Storage reference
+    const storageRef = ref(storage, `${documentId}.png`); // Firebase Storage reference
     const uploadTask = uploadBytesResumable(storageRef, imageFile);
     uploadTask.on(
       'state_changed',
@@ -153,8 +155,8 @@ class Item {
     name,
     quantity,
     time,
-    ownerUID,
-    ownerUsername,
+    userId,
+    username,
   ) {
     this.category = category;
     this.id = id;
@@ -163,8 +165,8 @@ class Item {
     this.name = name;
     this.quantity = quantity;
     this.time = time;
-    this.ownerUID = ownerUID;
-    this.ownerUsername = ownerUsername;
+    this.userId = userId;
+    this.username = username;
   }
   toString() {
     return (
@@ -182,9 +184,9 @@ class Item {
       ',' +
       this.time +
       ',' +
-      this.ownerUID +
+      this.userId +
       ',' +
-      this.ownerUsername
+      this.username
     );
   }
 }
@@ -200,8 +202,8 @@ const itemConverter = {
       name: item.name,
       quantity: item.quantity,
       time: item.time,
-      ownerUID: item.ownerUID,
-      ownerUsername: item.ownerUsername,
+      userId: item.userId,
+      username: item.username,
     };
   },
   fromFirestore: (snapshot, options) => {
@@ -214,8 +216,8 @@ const itemConverter = {
       data.name,
       data.quantity,
       data.time,
-      data.ownerUID,
-      data.ownerUsername,
+      data.userId,
+      data.username,
     );
   },
 };
