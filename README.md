@@ -10,4 +10,7 @@ https://docs.google.com/document/d/1sYXRjsJd19Lsl8PSUNlVJat00SyUBR2VdizIbHQ_tvc/
 ### Building
 
 * `cordova build ios --target="iPhone-15"
+  
+
+![image](https://github.com/user-attachments/assets/c6ec1acb-d58d-460b-8573-bc00de48017b)
 
